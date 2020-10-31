@@ -1,0 +1,5 @@
+installer les driver graphique code erreur : 
+
+Xorg[1825]: channel 4 killed!
+
+ou Xorg est le driver graphique par défaut de ubuntu
