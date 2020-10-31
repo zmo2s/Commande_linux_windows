@@ -1,0 +1,7 @@
+Diagnostiquer un crash linux : 
+
+
+vi /var/log/syslog
+
+ligne avec vi :  la ligne du crash en bleu : ^@^@^@^@^@^@^@^@^@^@ 
+avec gedit en rouge : \00\00\00\00\00
