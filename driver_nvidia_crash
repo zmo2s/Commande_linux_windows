@@ -1,0 +1,10 @@
+Passer par la commande tty alt+f1
+
+afficher liste driver nvidia : 
+
+sudo ubuntu-drivers devices
+Choisir d'en installer un parmis la liste : 
+
+sudo apt install -y nvidia-driver-450
+
+sudo reboot
