@@ -1,0 +1,5 @@
+
+
+ssh username@ip -p port
+
+ex : ssh anto@192.168.166.4 -p 2222
