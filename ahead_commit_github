@@ -1,0 +1,13 @@
+github : 
+
+error non fast forward : 
+commit ahead 
+
+
+git pull https://github.com/elaInnovation/iOS-Blue-Tool-Box.git master  --rebase
+
+corrgier les erreurs avec git status 
+
+pour lancer encore : 
+
+git rebase --continue
