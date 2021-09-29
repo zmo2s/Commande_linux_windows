@@ -1,0 +1,11 @@
+Visual studio code 2019
+Indentation : 
+Ctrl + A
+Ctrl + K + f
+
+
+Espace vide : 
+Ctrl + H
+selectionner regex .*
+selectionner pour tout
+^(?([^\r\n])\s)*\r?$\r?\n
