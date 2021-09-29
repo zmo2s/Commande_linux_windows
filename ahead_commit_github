@@ -11,3 +11,8 @@ corrgier les erreurs avec git status
 pour lancer encore : 
 
 git rebase --continue
+
+
+commande git pour annuler un commit : 
+git revert 
+https://www.atlassian.com/fr/git/tutorials/undoing-changes/git-revert
