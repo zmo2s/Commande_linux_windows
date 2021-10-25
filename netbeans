@@ -1,0 +1,14 @@
+how to change version in netbeans : 
+
+default installation is in : 
+
+/home/anto/netbeans-12.0
+
+file to change if you want to change the version of java : 
+
+/home/anto/netbeans-12.0/netbeans/etc/netbeans.conf
+
+and change with the path of sdk :  netbeans_jdkhome="/usr/lib/jvm/java-1.11.0-openjdk-amd64"
+
+for know where jdk version is isntall netbeans_jdkhomePATH : 
+sudo update-alternatives --config java
