@@ -1,0 +1,4 @@
+quand on coche nat simplement : 
+
+vmware utilsie par défaut vmnet8 en NAT il faut donc crée vmnet 8 en NAT (ou si vmnet8 est en bridge ou host only ou autre le mettre en NAT)
+(de plus cocher la case dhcp pour que les adresse pc puissent avoir une adresse ip dynamiquement.
