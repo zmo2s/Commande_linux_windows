@@ -11,3 +11,7 @@ selectionner regex .*
 selectionner pour tout
 inséré la regex pour remplacer les lignes vide : 
 ^(?([^\r\n])\s)*\r?$\r?\n
+
+
+navigate betweeen file : 
+ctrl + tab
