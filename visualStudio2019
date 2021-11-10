@@ -15,3 +15,23 @@ inséré la regex pour remplacer les lignes vide :
 
 navigate betweeen file : 
 ctrl + tab
+
+
+
+
+iterate enum      
+
+
+
+/*int decoded = 0;
+                        if(int.TryParse(sepBlock[1], out decoded))
+                        {
+                            ProdBRCommandParser.Enum.TypeTag enuValue = (ProdBRCommandParser.Enum.TypeTag)decoded;
+                            var values = System.Enum.GetValues(typeof(ProdBRCommandParser.Enum.TypeTag));
+                            foreach(ProdBRCommandParser.Enum.TypeTag e in values)
+                            {
+                                if(((int)e).ToString().Equals(sepBlock[1]))
+                                {
+                                }
+                            }
+                        }
