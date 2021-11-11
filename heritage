@@ -1,0 +1,33 @@
+heritage : 
+
+Prefer composition over inheritance as it is more malleable / easy to modify later, but do not use a compose-always approach. With composition, it's easy to change behavior on the fly with Dependency Injection / Setters. Inheritance is more rigid as most languages do not allow you to derive from more than one type. So the goose is more or less cooked once you derive from TypeA.
+
+My acid test for the above is:
+
+Does TypeB want to expose the complete interface (all public methods no less) of TypeA such that TypeB can be used where TypeA is expected? Indicates Inheritance.
+
+e.g. A Cessna biplane will expose the complete interface of an airplane, if not more. So that makes it fit to derive from Airplane.
+Does TypeB want only some/part of the behavior exposed by TypeA? Indicates need for Composition.
+
+e.g. A Bird may need only the fly behavior of an Airplane. In this case, it makes sense to extract it out as an interface / class / both and make it a member of both classes.
+
+https://stackoverflow.com/questions/49002/prefer-composition-over-inheritance
+
+
+
+LSP : Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it.
+
+
+All of the methods take X and Y coordinates as parameters to locate the tile position in the two-dimensional array of Tiles. This will allow a game developer to manage units in the board during the course of the game.
+
+The book goes on to change the requirements to say that the game frame work must also support 3D game boards to accommodate games that have flight. So a ThreeDBoard class is introduced that extends Board.
+
+At first glance this seems like a good decision. Board provides both the Height and Width properties and ThreeDBoard provides the Z axis.
+
+Where it breaks down is when you look at all the other members inherited from Board. The methods for AddUnit, GetTile, GetUnits and so on, all take both X and Y parameters in the Board class but the ThreeDBoard needs a Z parameter as well.
+
+So you must implement those methods again with a Z parameter. The Z parameter has no context to the Board class and the inherited methods from the Board class lose their meaning. A unit of code attempting to use the ThreeDBoard class as its base class Board would be very out of luck.
+
+https://stackoverflow.com/questions/56860/what-is-an-example-of-the-liskov-substitution-principle
+
+
