@@ -35,3 +35,20 @@ with number
                                 }
                             }
                         }
+                        
+                        
+                       
+                       
+   /*   config = new ProgramConfig
+            {
+                IpAddress = (true == teste.Get(argType.ip)) ? teste.argDico[argType.ip] : ProgramConfig.DEFAULT_IP,
+                Port = (true == teste.Get(argType.port)) ? int.Parse(teste.argDico[argType.port]) : ProgramConfig.DEFAULT_PORT,
+                
+            };
+         */
+            config = new ProgramConfig(
+                file: (true == teste.Get(argType.file)) ? teste.argDico[argType.file] : "",
+                ip: (true == teste.Get(argType.ip)) ? teste.argDico[argType.ip] : ProgramConfig.DEFAULT_IP,
+                port: (true == teste.Get(argType.port)) ? int.Parse(teste.argDico[argType.port]) : ProgramConfig.DEFAULT_PORT,
+                time: (true == teste.Get(argType.time)) ? int.Parse(teste.argDico[argType.time]) : ProgramConfig.DEFAULT_TIME
+                );
