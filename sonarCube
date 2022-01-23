@@ -1,0 +1,10 @@
+docker pull sonarqube:lts
+docker run -d -p 9000:9000 sonarqube
+docker ps
+docker commit 422b4f6af94633be43 antonin/sonarworking
+docker ps
+docker stop id_docker
+
+
+after : 
+docker run -d -p 9000:9000 antonin/sonarworking
