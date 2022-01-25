@@ -1,0 +1,19 @@
+sudo nano /etc/ssh/sshd_config
+
+In the file, make sure the following options are set as follows:
+
+PermitRootLogin no
+PubkeyAuthentication yes
+
+
+sudo systemctl restart sshd
+sudo systemctl status sshd
+
+
+ssh-keygen -b 4096
+
+on donne mdp "a" par exemple 
+
+ssh-copy-id your_username@192.0.2.0
+
+le mdp "a" car le meme que lors de la generation de keygen
