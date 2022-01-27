@@ -35,3 +35,9 @@ add to ssh agent :
 ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub : 
 copy paste tout ce qui a dans ce fichier dnas clé ssh github
+
+
+
+
+
+pour set un remote en ssh : git remote set-url origin url_ssh
