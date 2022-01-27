@@ -4,7 +4,6 @@ In the file, make sure the following options are set as follows:
 
 PermitRootLogin yes
 
-// pas necessairePubkeyAuthentication yes
 
 
 sudo systemctl restart ssh
@@ -22,3 +21,8 @@ le mdp "a" car le meme que lors de la generation de keygen
 on peut alors se connecter comme ça
 
 ssh root@192.168.216.130
+
+
+for reset password ssh-keygen : 
+
+ssh-keygen -p
