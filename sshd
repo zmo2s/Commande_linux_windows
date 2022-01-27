@@ -6,8 +6,8 @@ PermitRootLogin no
 PubkeyAuthentication yes
 
 
-sudo systemctl restart sshd
-sudo systemctl status sshd
+sudo systemctl restart ssh
+sudo systemctl status ssh
 
 
 ssh-keygen -b 4096
@@ -17,3 +17,7 @@ on donne mdp "a" par exemple
 ssh-copy-id your_username@192.0.2.0
 
 le mdp "a" car le meme que lors de la generation de keygen
+
+on peut alors se connecter comme ça
+
+ssh root@192.168.216.130
