@@ -8,3 +8,7 @@ docker stop id_docker
 
 after : 
 docker run -d -p 9000:9000 antonin/sonarworking
+
+afficher les images : docker images 
+entrer dans le docker pour récupéré le mot de passe de jenkins : 
+docker exec -it --user root <container id> bash
