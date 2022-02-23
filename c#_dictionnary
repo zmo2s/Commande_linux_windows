@@ -1,0 +1,11 @@
+            List<string> tableau = new List<string> { ConstantMesure.WakeUpId };
+            // if dictionnary contains at least 1 element verify condition
+            if( tableau.Any(element => this.dicMeasurementsConsumption.ContainsKey(element)))
+            {
+                this.dicMeasurementsConsumption.ToList().ForEach(
+                    pair =>
+                        {
+                            pair.Value.
+                        }
+                    );
+            }
