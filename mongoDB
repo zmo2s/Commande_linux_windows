@@ -1,0 +1,172 @@
+mongoDB
+
+use DATABASE_NAME command is used to create database
+
+Example:
+
+>use hdfc
+switched to db mydb
+
+2) db command is used to check currently selected database
+
+Example:
+
+>db
+mydb
+
+3) show dbs command check all database lists
+
+Example:
+
+>show dbs
+local     0.78125GB
+test      0.23012GB
+
+In above example database name is not shown in list. To display list, you have to insert at least one document in hdfc database.
+
+Example:
+
+>db.customer.insert({name:"customerName",amount:20000})
+>show dbs
+local      0.78125GB
+mydb      0.23012GB
+test       0.23012GB
+
+Note: By default database in MongoDB is test, if you don’t create any database, then collection will be stored in test database
+
+4) db.dropDatabase() command is used to drop a curently working database
+
+Example: 
+
+>use hdfc
+switched to db mydb
+>db.dropDatabase()
+>{ "dropped" : "mydb ", "ok" : 1 }
+>
+
+5) db.createCollection(name, options) command is used to create collection. Collection works here similar as table works in MYSQL.
+
+Collections are created automatically when we insert data in database. There is no need to create collection in database.
+
+Example:
+
+>use test
+switched to db test
+>db.createCollection("customer")
+{ "ok" : 1 }
+>
+
+6) show collections command is used to show all collections/tables
+
+Example:
+
+>show collections
+customer
+>
+
+7) db.collection.drop() command is used to drop a collection from the database. drop() method will return true, if the selected collection is dropped successfully, otherwise it will return false.
+
+Example:
+
+db.customer.drop()
+true
+>
+
+8) db.COLLECTION_NAME.insert(document) command is used to insert data in MongoDB collection. It is used when you don’t have any _id in the document. If you have _id in the document then save() method will be used.
+
+Example:
+
+db.customer.insert([
+{
+name: ' customerName ',
+amount: 20000
+},
+{
+name: ' customerName 2',
+amount: 10000
+}
+])
+
+Example:
+
+db.customer.save([
+{
+_id: ObjectId(7df78ad8902c),
+name: ' customerName ',
+amount: 20000
+},
+{
+_id: ObjectId(7df78ad8902c),
+name: ' customerName 2',
+amount: 10000
+}
+])
+
+9) db.COLLECTION_NAME.find() command is used get all data of collection. It displays data in non-structural way.
+
+Example:
+
+>db.customer.find()
+
+10) db.COLLECTION_NAME.find().pretty() command is used get all data of collection in structural way.
+
+Example:
+
+>db.customer.find().pretty()
+{
+_id: ObjectId(7df78ad8902c),
+name: ' customerName ',
+amount: 20000
+}
+>
+
+11) db.COLLECTION_NAME.update(SELECTION_CRITERIA, UPDATED_DATA) command is used to update values in the Document/Row. By default update() method in MongoDB , update only one Document. If we want to update multi Documents/Rows at a time, we need to set parameter ‘multi’ to true.
+
+Example of single Document updation:
+
+>db.mycol.update({'name':'Jorge’},{$set:{'name':'Dan’}}
+
+Example of Multi Documents updation:
+
+>db.mycol.update({'name':'Jorge},
+{$set:{'name':’Dan '}},{multi:true})
+
+12) db.COLLECTION_NAME.save({_id:ObjectId(),NEW_DATA}) command is used to save new document in place of existing document.
+
+Example:
+
+>db.mycol.save(
+{
+"_id" : ObjectId(7df78ad8902c), "name":"Dan",
+"amount":10000
+}
+)
+
+13) db.COLLECTION_NAME.remove(DELLETION_CRITTERIA, JUSTONE) command is used to remove document from the collection.
+
+DELLETION_CRITTERIA(optional): DELLETION_CRITTERIA parameter include document which will be removed according to the criteria.
+
+Example:
+
+>db.mycol.remove({'name': customerName '})
+
+JUSTONE(optional): JUSTONE parameter include true or 1. It removes only one document. JUSTONE parameter deletes only one record at a time in multiple records.
+
+Example:
+
+>db.mycol.remove({'name':' customerName '},1)
+
+If we don’t write any parameter inside remove() method then MongoDB delete all documents from the collection. This works as a TRUNCATE command works in MYSQL.
+
+Example:
+
+>db.mycol.remove()
+
+14) db.COLLECTION_NAME.find().limit(NUMBER) command set the limit of document that we want to be displayed.
+
+Example:
+
+>db.mycol.find({},{"name":1,_id:0}).limit(2)
+{"name":" customerName "}
+{"name":" customerName 2"}
+>
