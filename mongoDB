@@ -1,5 +1,9 @@
 mongoDB
 
+https://stackoverflow.com/questions/2350495/how-do-i-perform-the-sql-join-equivalent-in-mongodb
+
+https://www.mongodb.com/docs/upcoming/reference/operator/aggregation/lookup/#pipe._S_lookup
+
 use DATABASE_NAME command is used to create database
 
 Example:
